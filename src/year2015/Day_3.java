@@ -114,8 +114,7 @@ public class Day_3 {
         @Override
         public boolean equals(Object obj) {
             if (this == obj) return true;
-            if (!(obj instanceof LocationKey)) return false;
-            LocationKey key = (LocationKey) obj;
+            if (!(obj instanceof LocationKey key)) return false;
             return x == key.x && y == key.y;
         }
 

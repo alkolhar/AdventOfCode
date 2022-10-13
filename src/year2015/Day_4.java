@@ -13,18 +13,16 @@ public class Day_4 {
         findHash(6); // second star
     }
 
-    public static String readFileAsString(String fileName) throws Exception {
+    public static String readFileAsString() throws Exception {
         String basePath = new File(inputTextLocation).getAbsolutePath();
         return new String(Files.readAllBytes(Path.of(basePath)));
     }
 
     private static void findHash(int numberOfLeadingZeroes) throws Exception {
-        String secretKey = readFileAsString(inputTextLocation);
+        String secretKey = readFileAsString();
 
         MessageDigest md = MessageDigest.getInstance("MD5");
         byte[] digest;
-
-        StringBuilder sb = new StringBuilder();
 
         int i = 0;
         while (true) {
@@ -36,6 +34,5 @@ public class Day_4 {
         }
 
         System.out.println("Hash with " + numberOfLeadingZeroes + " leading zeroes found: " + (i-1));
-        System.out.println(sb + "\n");
     }
 }
